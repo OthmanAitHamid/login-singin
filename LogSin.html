@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>LogIn / SingIn</title>
+    <script src="jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        $(document).ready(function(){
+            $("#singForm").hide();
+            $("#login").click(function(){
+                $(this).css({"border-bottom":"4px solid #758eb7","background-color":"white"})
+                $("#singin").css({"border-bottom":"none","background-color":"whitesmoke"})
+                $("#singForm").fadeOut(400,function(){
+                    $("#logForm").fadeIn();
+                    $(".form").css("height" , "300px");
+                });
+            });
+            $("#singin").click(function(){
+                $(this).css({"border-bottom":"4px solid #758eb7","background-color":"white"})
+                $("#login").css({"border-bottom":"none","background-color":"whitesmoke"})
+                $("#logForm").fadeOut(400,function(){
+                    $("#singForm").fadeIn();
+                    $(".form").css("height" , "450px");
+                });
+            });
+            $('input[type="text"').focus(function(){
+                $(this).css({'font-size':"30px"});
+            });
+            $('input[type="text"').blur(function(){
+                $(this).css({'font-size':"20px"});
+            });
+            $('input[type="email"').focus(function(){
+                $(this).css({'font-size':"30px"});
+            });
+            $('input[type="email"').blur(function(){
+                $(this).css({'font-size':"20px"});
+            });
+            $('input[type="password"').focus(function(){
+                $(this).css({'font-size':"30px"});
+            });
+            $('input[type="password"').blur(function(){
+                $(this).css({'font-size':"20px"});
+            });
+        });
+    </script>
+</head>
+<body>
+    
+    
+    <div class="form">
+        <div class="header">
+            <button id="login" >LogIn</button>
+            <button id="singin" >SingUp</button>
+        </div>
+        
+        <article id="logForm">
+            <input type="text" placeholder="Email">
+            <input type="password" placeholder="Password">
+            <div><input type="checkbox"  id="chec"><label for="chec">Remeber Me</label></div>
+            <a href="#">Forget Password</a>
+            <br>
+            <button id="logBtn">LogIn</button>
+        </article>
+        <article id="singForm">
+            <input type="text" placeholder="Name">
+            <input type="text" placeholder="Family Name">
+            <input type="email" placeholder="Email">
+            <input type="password" placeholder="Password">
+            <input type="password" placeholder="Confirm Password">
+            <br>
+            <button id="singBtn">SingUp</button>
+        </article>
+        
+    </div>
+    
+    
+</body>
+</html>
